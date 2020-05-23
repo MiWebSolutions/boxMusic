@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "boxMusic"
+    }
+  },
+  "defaultProject": "boxMusic",
+  "cli": {
+    "analytics": false
+  }
 }
