@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "boxmusicproyect": {
+      "hosting": {
+        "boxMusic": [
+          "boxmusicproyect"
+        ]
+      }
+    }
+  }
+}

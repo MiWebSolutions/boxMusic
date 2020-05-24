@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig : {
+    apiKey: "AIzaSyBDlwUJ3cBkhh7pDGv0nPNEWYYK_vRZxsQ",
+    authDomain: "boxmusicproyect.firebaseapp.com",
+    databaseURL: "https://boxmusicproyect.firebaseio.com",
+    projectId: "boxmusicproyect",
+    storageBucket: "boxmusicproyect.appspot.com",
+    messagingSenderId: "183549436126",
+    appId: "1:183549436126:web:e375852af0aa35a1a1a24f",
+    measurementId: "G-Y57B3HC5NR"
+  }
 };
 
 /*
