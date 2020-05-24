@@ -1,1 +1,12 @@
-<p>list-music works!</p>
+<div class="container">
+    <div class="row">
+        <div class="card" style="width: 18rem;" *ngFor="let music of musics">
+            <img [src]="music.image" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{music.name}}</h5>
+              <p class="card-text">{{music.album}}</p>
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            </div>
+          </div>
+    </div>
+</div>

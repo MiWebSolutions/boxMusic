@@ -9,6 +9,8 @@ import { MusicService } from '../music.service';
 })
 export class ListMusicComponent implements OnInit {
 
+  musics;
+
   constructor(private musicSvc:MusicService) { }
 
   ngOnInit(): void {
@@ -18,7 +20,7 @@ export class ListMusicComponent implements OnInit {
   getAllMusic()
   {
     return this.musicSvc.getAllMusic().subscribe(res => {
-      console.log(res);
+      this.musics = res;
     });
   }
 
