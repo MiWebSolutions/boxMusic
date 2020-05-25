@@ -32,16 +32,17 @@ export class MusicService {
     return this.afs.doc<Music>(`musics/${id}`).valueChanges();
   }
 
-  private createMusic(music:Music)
+  public createMusic(music:Music)
   {
       const musicObj = {
           name : music.name,
           album : music.album,
-          spotifyUrl : music.spotifyUrl,
-          deezerUrl : music.deezerUrl,
-          appleMusicUrl : music.appleMusicUrl,
-          googlePlayUrl : music.googlePlayUrl,
-          amazonMusicUrl : music.amazonMusicUrl
+        //   image : music.image,
+        //   spotifyUrl : music.spotifyUrl,
+        //   deezerUrl : music.deezerUrl,
+        //   appleMusicUrl : music.appleMusicUrl,
+        //   googlePlayUrl : music.googlePlayUrl,
+        //   amazonMusicUrl : music.amazonMusicUrl
       };
 
       if(music.id)

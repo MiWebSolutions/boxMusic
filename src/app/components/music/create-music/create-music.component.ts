@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MusicService } from "../music.service";
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Music } from '../../../shared/models/music';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-create-music',
@@ -10,17 +13,33 @@ export class CreateMusicComponent implements OnInit {
 
   musics;
 
-  constructor(private musicSvc : MusicService) { }
+  constructor(private musicSvc : MusicService,
+              private modalService:NgbModal) { }
+
+  @Input() public user;
+
+  public newMusicForm = new FormGroup({
+    name : new FormControl('', Validators.required),
+    album : new FormControl(''),
+    image : new FormControl('')
+  });
 
   ngOnInit(): void {
-    this.getAllMusic();
   }
 
-  getAllMusic()
+  async createMusic(music:Music)
   {
-    return this.musicSvc.getAllMusic().subscribe(res => {
-      console.log(res);
-    })
+    try{
+      await this.musicSvc.createMusic(music);
+    }
+    catch(error)
+    {
+      console.log(error);
+    }
+  }
+
+  closeModal(): void {
+    this.modalService.dismissAll();
   }
 
 }

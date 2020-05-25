@@ -1,1 +1,18 @@
-<p>create-music works!</p>
+<div class="container my-5">
+    <form [formGroup]="newMusicForm" (ngSubmit)="[createMusic(newMusicForm.value), closeModal()]">
+        <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" class="form-control" placeholder="Nombre" formControlName="name">
+            <small id="textHelp" class="form-text text-muted">El nombre es obligatorio</small>
+        </div>
+        <div class="form-group">
+            <label>Album</label>
+            <input type="text" class="form-control" placeholder="Album" formControlName="album">
+        </div>
+        <div>
+            <label for="">Image</label>
+            <input type="file" formControlName="image">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Agregar</button>
+    </form>
+</div>

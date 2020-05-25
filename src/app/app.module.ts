@@ -14,12 +14,16 @@ import { MusicComponent } from './components/music/music.component';
 import { ShowsComponent } from './components/shows/shows.component';
 import { VideosComponent } from './components/videos/videos.component';
 import { ListMusicComponent } from "./components/music/list-music/list-music.component";
+import { CreateMusicComponent } from "./components/music/create-music/create-music.component";
 
 // firebase
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { ModalComponent } from './shared/components/modal/modal.component';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,9 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     MusicComponent,
     ShowsComponent,
     VideosComponent,
-    ListMusicComponent
+    ListMusicComponent,
+    ModalComponent,
+    CreateMusicComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +45,12 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     NgbModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  entryComponents: [
+    ModalComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
