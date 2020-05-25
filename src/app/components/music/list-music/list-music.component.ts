@@ -14,12 +14,6 @@ import { ModalComponent } from '../../../shared/components/modal/modal.component
 export class ListMusicComponent implements OnInit {
 
   musics;
-  closeResult = '';
-
-  public user = {
-    name: 'prueba',
-    age: 26
-  }
 
   constructor(private musicSvc:MusicService,
               private modalService:NgbModal) { }
@@ -42,11 +36,11 @@ export class ListMusicComponent implements OnInit {
 
   editMusic(music : Music)
   {
-    // this.openModal(music);
+    this.openModal(music);
   }
 
-  openModal(content?) {
+  openModal(music?:Music) {
     const modalRef = this.modalService.open(ModalComponent);
-    modalRef.componentInstance.user = this.user;
+    modalRef.componentInstance.music = music;
   }
 }

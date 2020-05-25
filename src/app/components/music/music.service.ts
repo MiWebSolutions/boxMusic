@@ -52,4 +52,10 @@ export class MusicService {
 
       return this.afs.collection<Music>('musics').add(musicObj);
   }
+
+  editMusicById(music:Music)
+  {
+    console.warn(music);
+    return this.afs.collection<Music>('musics').doc(music.id).update(music);
+  }
 }

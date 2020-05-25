@@ -15,6 +15,7 @@ import { ShowsComponent } from './components/shows/shows.component';
 import { VideosComponent } from './components/videos/videos.component';
 import { ListMusicComponent } from "./components/music/list-music/list-music.component";
 import { CreateMusicComponent } from "./components/music/create-music/create-music.component";
+import { EditMusicComponent } from './components/music/edit-music/edit-music.component';
 
 // firebase
 import { AngularFireModule } from '@angular/fire';
@@ -37,7 +38,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     VideosComponent,
     ListMusicComponent,
     ModalComponent,
-    CreateMusicComponent
+    CreateMusicComponent,
+    EditMusicComponent
   ],
   imports: [
     BrowserModule,
