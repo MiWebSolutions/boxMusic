@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore/firestore';
 import { MusicService } from '../music.service';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, ModalDismissReasons, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import { CreateMusicComponent } from '../create-music/create-music.component';
 import { Music } from '../../../shared/models/music.interface';
 import { ModalComponent } from '../../../shared/components/modal/modal.component';
+import { DeleteAlertComponent } from '../../../shared/components/delete-alert/delete-alert.component';
 
 @Component({
   selector: 'app-list-music',
@@ -44,8 +45,9 @@ export class ListMusicComponent implements OnInit {
     modalRef.componentInstance.music = music;
   }
 
-  deleteMusic(music:Music)
+  deleteAlert(music:Music)
   {
-    return this.musicSvc.deleteMusicById(music);
+    const modalRef = this.modalService.open(DeleteAlertComponent);
+    modalRef.componentInstance.music = music;
   }
 }

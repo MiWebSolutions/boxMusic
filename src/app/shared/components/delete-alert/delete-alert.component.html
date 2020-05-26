@@ -1,0 +1,10 @@
+<div class="container">
+      <h3>Seguro que desea eliminar?</h3>
+      <button class="btn btn-outline-primary mr-2" (click)="closeModal()">
+        <div>Cancelar</div>
+      </button>
+      
+      <button class="btn btn-outline-danger" (click)="[deleteMusic(music), closeModal()]">
+        <div>Eliminar</div>
+      </button>
+</div>
