@@ -1,6 +1,6 @@
 <h2>Editar Musica</h2>
 <div class="container my-5">
-        <form [formGroup]="editMusicForm" (ngSubmit)="[editMusic(editMusicForm.value), closeModal()]">
+        <form [formGroup]="editMusicForm" (ngSubmit)="[editMusicWhitImage(editMusicForm.value), closeModal()]">
             <div class="form-group">
                 <label>Nombre</label>
                 <input type="text" class="form-control" placeholder="Nombre" formControlName="name">

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Music } from '../../../shared/models/music';
+import { Music } from '../../../shared/models/music.interface';
 import { MusicService } from '../music.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -11,10 +11,14 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class EditMusicComponent implements OnInit {
 
+  image;
+  imageOriginal:any;
+
+  @Input() music:Music;
+
   constructor(private musicSvc:MusicService,
               private modalService:NgbModal) { }
 
-  @Input() music:Music;
 
   editMusicForm = new FormGroup({
     id: new FormControl('', Validators.required),
@@ -24,6 +28,9 @@ export class EditMusicComponent implements OnInit {
   });
 
   ngOnInit(): void {
+    console.log(this.music.image)
+    this.image = this.music.image;
+    this.imageOriginal = this.music.image;
     this.initValuesForm();
   }
 
@@ -44,5 +51,23 @@ export class EditMusicComponent implements OnInit {
 
   closeModal(): void {
     this.modalService.dismissAll();
+  }
+
+  handleImage(event:any) : void
+  {
+    this.image = event.target.files[0];
+  }
+
+  editMusicWhitImage(music:Music)
+  {
+    if(this.image === this.imageOriginal)
+    {
+      music.image = this.imageOriginal;
+      this.musicSvc.editMusicById(music);
+    }
+    else
+    {
+      this.musicSvc.editMusicById(music, this.image);
+    }
   }
 }

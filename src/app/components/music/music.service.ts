@@ -3,12 +3,15 @@ import { AngularFirestore } from "@angular/fire/firestore";
 import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';
 import { map, finalize } from "rxjs/operators";
-import { Music } from 'src/app/shared/models/music';
+import { Music } from 'src/app/shared/models/music.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MusicService {
+
+  private filePath;
+  private downloadURL : Observable<string>;
 
   constructor(private afs:AngularFirestore,
               private storage:AngularFireStorage) { }
@@ -37,7 +40,7 @@ export class MusicService {
       const musicObj = {
           name : music.name,
           album : music.album,
-        //   image : music.image,
+          image : music.image,
         //   spotifyUrl : music.spotifyUrl,
         //   deezerUrl : music.deezerUrl,
         //   appleMusicUrl : music.appleMusicUrl,
@@ -53,9 +56,37 @@ export class MusicService {
       return this.afs.collection<Music>('musics').add(musicObj);
   }
 
-  editMusicById(music:Music)
+  public editMusicById(music:Music, newImage?:File)
   {
-    console.warn(music);
-    return this.afs.collection<Music>('musics').doc(music.id).update(music);
+    if(newImage)
+    {
+      this.uploadImage(music, newImage);
+    }
+    else
+    {
+      return this.afs.collection<Music>('musics').doc(music.id).update(music);
+    }
+  }
+
+  public setMusic(music:Music, imageFile:File)
+  {
+    this.uploadImage(music, imageFile);
+  }
+
+  private uploadImage(music:Music, image:File)
+  {
+    this.filePath = `musics-images/${image.name}`;
+    const fileRef = this.storage.ref(this.filePath);
+    const task = this.storage.upload(this.filePath, image);
+    task.snapshotChanges()
+        .pipe(
+          finalize(() => {
+            fileRef.getDownloadURL().subscribe(imageUrl => {
+              this.downloadURL = imageUrl;
+
+              this.createMusic(music);
+            })
+          })
+        )
   }
 }

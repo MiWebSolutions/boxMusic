@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Music } from '../../models/music';
+import { Music } from '../../models/music.interface';
 
 @Component({
   selector: 'app-modal',

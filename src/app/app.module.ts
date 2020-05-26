@@ -58,7 +58,9 @@ import { RegisterComponent } from './components/auth/register/register.component
   entryComponents: [
     ModalComponent
   ],
-  providers: [],
+  providers: [
+    {provide: Storage, useValue:'gs://boxmusicproyect.appspot.com'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

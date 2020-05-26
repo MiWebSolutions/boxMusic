@@ -3,7 +3,7 @@ import { AngularFirestore } from '@angular/fire/firestore/firestore';
 import { MusicService } from '../music.service';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { CreateMusicComponent } from '../create-music/create-music.component';
-import { Music } from '../../../shared/models/music';
+import { Music } from '../../../shared/models/music.interface';
 import { ModalComponent } from '../../../shared/components/modal/modal.component';
 
 @Component({

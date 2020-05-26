@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MusicService } from "../music.service";
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Music } from '../../../shared/models/music';
+import { Music } from '../../../shared/models/music.interface';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
@@ -12,6 +12,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 export class CreateMusicComponent implements OnInit {
 
   musics;
+  private image:any;
 
   constructor(private musicSvc : MusicService,
               private modalService:NgbModal) { }
@@ -42,4 +43,20 @@ export class CreateMusicComponent implements OnInit {
     this.modalService.dismissAll();
   }
 
+  handleImage(event:any) : void
+  {
+    this.image = event.target.files[0];
+  }
+
+  async createMusicWhitImage(music:Music)
+  {
+    try
+    {
+      this.musicSvc.setMusic(music, this.image);
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
+  }
 }
