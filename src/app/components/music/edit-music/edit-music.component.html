@@ -12,7 +12,7 @@
             </div>
             <div>
                 <label for="">Image</label>
-                <input type="file" formControlName="image">
+                <input type="file" formControlName="image" (change)="handleImage($event)">
             </div>
             <button type="submit" class="btn btn-primary btn-block">Editar</button>
         </form>

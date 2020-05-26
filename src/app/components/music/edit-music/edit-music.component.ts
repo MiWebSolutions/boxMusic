@@ -11,7 +11,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class EditMusicComponent implements OnInit {
 
-  image;
+  image:any;
   imageOriginal:any;
 
   @Input() music:Music;
@@ -28,7 +28,6 @@ export class EditMusicComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    console.log(this.music.image)
     this.image = this.music.image;
     this.imageOriginal = this.music.image;
     this.initValuesForm();
