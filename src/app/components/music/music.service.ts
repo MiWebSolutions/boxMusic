@@ -40,7 +40,7 @@ export class MusicService {
       const musicObj = {
           name : music.name,
           album : music.album,
-          image : music.image,
+          image : this.downloadURL,
         //   spotifyUrl : music.spotifyUrl,
         //   deezerUrl : music.deezerUrl,
         //   appleMusicUrl : music.appleMusicUrl,
@@ -87,6 +87,6 @@ export class MusicService {
               this.createMusic(music);
             })
           })
-        )
+        ).subscribe();
   }
 }
