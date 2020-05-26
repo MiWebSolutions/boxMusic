@@ -25,6 +25,8 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { ModalComponent } from './shared/components/modal/modal.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './components/auth/login/login.component';
+import { RegisterComponent } from './components/auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ListMusicComponent,
     ModalComponent,
     CreateMusicComponent,
-    EditMusicComponent
+    EditMusicComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
