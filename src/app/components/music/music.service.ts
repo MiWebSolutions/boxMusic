@@ -30,7 +30,7 @@ export class MusicService {
                   )
   }
 
-  getSingleMusic(id:Music) : Observable<Music>
+  public getSingleMusic(id:Music) : Observable<Music>
   {
     return this.afs.doc<Music>(`musics/${id}`).valueChanges();
   }
@@ -88,5 +88,10 @@ export class MusicService {
             })
           })
         ).subscribe();
+  }
+
+  public deleteMusicById(music: Music)
+  {
+    return this.afs.collection('musics').doc(music.id).delete();
   }
 }

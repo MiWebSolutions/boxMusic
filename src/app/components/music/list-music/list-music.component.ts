@@ -43,4 +43,9 @@ export class ListMusicComponent implements OnInit {
     const modalRef = this.modalService.open(ModalComponent);
     modalRef.componentInstance.music = music;
   }
+
+  deleteMusic(music:Music)
+  {
+    return this.musicSvc.deleteMusicById(music);
+  }
 }
