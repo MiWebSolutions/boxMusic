@@ -15,7 +15,7 @@ import { DeleteAlertComponent } from '../../../shared/components/delete-alert/de
 export class ListMusicComponent implements OnInit {
 
   musics;
-
+  
   constructor(private musicSvc:MusicService,
               private modalService:NgbModal) { }
 
@@ -23,9 +23,9 @@ export class ListMusicComponent implements OnInit {
     this.getAllMusic();
   }
 
-  getAllMusic()
+  async getAllMusic()
   {
-    return this.musicSvc.getAllMusic().subscribe(res => {
+    return await this.musicSvc.getAllMusic().subscribe(res => {
       this.musics = res;
     });
   }

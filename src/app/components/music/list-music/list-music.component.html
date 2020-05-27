@@ -32,6 +32,16 @@
                     <h5 class="card-title">{{music.name}}</h5>
                     <p class="card-text">{{music.album}}</p>
                 </div>
+
+                <div>
+                    <app-music-icons [spotify]="music.spotify"
+                                     [deezer]="music.deezer"
+                                     [apple]="music.apple"
+                                     [youtube]="music.youtube"
+                                     [soundcloud]="music.soundcloud">
+                    </app-music-icons>
+                </div>
+
             </div>
         </div>
     </div>

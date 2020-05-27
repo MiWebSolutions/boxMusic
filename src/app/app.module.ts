@@ -28,6 +28,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { DeleteAlertComponent } from './shared/components/delete-alert/delete-alert.component';
+import { MusicIconsComponent } from './shared/components/music-icons/music-icons.component';
 
 @NgModule({
   declarations: [
@@ -43,9 +44,14 @@ import { DeleteAlertComponent } from './shared/components/delete-alert/delete-al
     ModalComponent,
     CreateMusicComponent,
     EditMusicComponent,
+<<<<<<< HEAD
     LoginComponent,
     RegisterComponent,
     DeleteAlertComponent
+=======
+    DeleteAlertComponent,
+    MusicIconsComponent
+>>>>>>> Coponente de iconos musicales y sus enlaces
   ],
   imports: [
     BrowserModule,
