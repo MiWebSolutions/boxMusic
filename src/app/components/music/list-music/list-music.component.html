@@ -27,18 +27,20 @@
                     </button>
                 </div>
 
-                <img [src]="music.image" class="card-img-top" alt="...">
+                <img [src]="music.image" class="card-img-top img-thumbnail" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{music.name}}</h5>
                     <p class="card-text">{{music.album}}</p>
                 </div>
 
                 <div>
-                    <app-music-icons [spotify]="music.spotify"
-                                     [deezer]="music.deezer"
-                                     [apple]="music.apple"
-                                     [youtube]="music.youtube"
-                                     [soundcloud]="music.soundcloud">
+                    <app-music-icons [spotify]="music.spotifyUrl"
+                                     [deezer]="music.deezerUrl"
+                                     [apple]="music.appleMusicUrl"
+                                     [google]="music.googlePlayUrl"
+                                     [amazon]="music.amazonMusicUrl"
+                                     [youtube]="music.youtubeUrl"
+                                     [soundCloud]="music.soundCloudUrl">
                     </app-music-icons>
                 </div>
 

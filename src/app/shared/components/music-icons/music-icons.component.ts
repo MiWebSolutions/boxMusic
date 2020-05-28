@@ -12,8 +12,10 @@ export class MusicIconsComponent implements OnInit {
   @Input() spotify : string;
   @Input() deezer : string;
   @Input() apple : string;
+  @Input() google : string;
+  @Input() amazon : string;
+  @Input() soundCloud : string;
   @Input() youtube : string;
-  @Input() soundcloud : string;
     
   ngOnInit(): void {
   }

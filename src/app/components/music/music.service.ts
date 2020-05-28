@@ -41,11 +41,13 @@ export class MusicService {
           name : music.name,
           album : music.album,
           image : this.downloadURL,
-        //   spotifyUrl : music.spotifyUrl,
-        //   deezerUrl : music.deezerUrl,
-        //   appleMusicUrl : music.appleMusicUrl,
-        //   googlePlayUrl : music.googlePlayUrl,
-        //   amazonMusicUrl : music.amazonMusicUrl
+          spotifyUrl : music.spotifyUrl,
+          deezerUrl : music.deezerUrl,
+          appleMusicUrl : music.appleMusicUrl,
+          googlePlayUrl : music.googlePlayUrl,
+          amazonMusicUrl : music.amazonMusicUrl,
+          youtubeUrl : music.youtubeUrl,
+          soundCloud : music.soundCloudUrl
       };
 
       if(music.id)

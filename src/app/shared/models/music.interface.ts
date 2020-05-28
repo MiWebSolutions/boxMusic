@@ -7,5 +7,7 @@ export interface Music {
     deezerUrl? : string,
     appleMusicUrl? : string,
     googlePlayUrl? : string,
-    amazonMusicUrl? : string
+    amazonMusicUrl? : string,
+    soundCloudUrl? : string,
+    youtubeUrl? : string
 }

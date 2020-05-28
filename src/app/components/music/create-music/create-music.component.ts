@@ -22,7 +22,14 @@ export class CreateMusicComponent implements OnInit {
   public newMusicForm = new FormGroup({
     name : new FormControl('', Validators.required),
     album : new FormControl(''),
-    image : new FormControl('')
+    image : new FormControl(''),
+    spotifyUrl : new FormControl(''),
+    deezerUrl : new FormControl(''),
+    appleMusicUrl : new FormControl(''),
+    googlePlayUrl : new FormControl(''),
+    amazonMusicUrl : new FormControl(''),
+    youtubeUrl : new FormControl(''),
+    soundCloudUrl : new FormControl('')
   });
 
   ngOnInit(): void {
