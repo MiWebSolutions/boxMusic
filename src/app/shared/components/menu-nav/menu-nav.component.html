@@ -1,38 +1,36 @@
 <nav ngNav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="router-link-active"  >Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active"  >Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/music']" routerLinkActive="router-link-active"  >Musica</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/videos']" routerLinkActive="router-link-active"  >Videos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/shows']" routerLinkActive="router-link-active"  >Shows</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="router-link-active"  >Contacto</a>
-        </li>
-        
-  
-        <li ngbDropdown class="nav-item">
-          <a href (click)="false" class="nav-link" ngbDropdownToggle>Dropdown</a>
-          <div ngbDropdownMenu>
-            <button ngbDropdownItem>Action</button>
-            <button ngbDropdownItem>Another action</button>
-            <button ngbDropdownItem>Something else here</button>
-            <div class="dropdown-divider"></div>
-            <button ngbDropdownItem [disabled]="true">Separated link</button>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </nav>
+  <a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="router-link-active">Box Music</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/home']" routerLinkActive="router-link-active">Home <span
+            class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/music']" routerLinkActive="router-link-active">Musica</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/videos']" routerLinkActive="router-link-active">Videos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/shows']" routerLinkActive="router-link-active">Shows</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/contact']" routerLinkActive="router-link-active">Contacto</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav justify-content-end">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/login']" routerLinkActive="router-link-active"> Login </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/register']" routerLinkActive="router-link-active"> Register </a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -5,7 +5,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { MusicComponent } from './components/music/music.component';
 import { ShowsComponent } from './components/shows/shows.component';
 import { VideosComponent } from './components/videos/videos.component';
-
+import {LoginComponent} from './components/auth/login/login.component';
+import {RegisterComponent} from './components/auth/register/register.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,14 @@ const routes: Routes = [
   {
     path:'contact',
     component: ContactComponent
+  },
+  {
+    path:'login',
+    component: LoginComponent
+  },
+  {
+    path:'register',
+    component: RegisterComponent
   },
   {
     path: '**',
