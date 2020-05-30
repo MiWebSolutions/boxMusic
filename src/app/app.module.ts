@@ -44,14 +44,11 @@ import { MusicIconsComponent } from './shared/components/music-icons/music-icons
     ModalComponent,
     CreateMusicComponent,
     EditMusicComponent,
-<<<<<<< HEAD
     LoginComponent,
     RegisterComponent,
-    DeleteAlertComponent
-=======
+    DeleteAlertComponent,
     DeleteAlertComponent,
     MusicIconsComponent
->>>>>>> Coponente de iconos musicales y sus enlaces
   ],
   imports: [
     BrowserModule,

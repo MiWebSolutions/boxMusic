@@ -24,7 +24,15 @@ export class EditMusicComponent implements OnInit {
     id: new FormControl('', Validators.required),
     name: new FormControl(''),
     album: new FormControl(''),
-    image: new FormControl('')
+    image: new FormControl(''),
+    spotifyUrl : new FormControl(''),
+    deezerUrl : new FormControl(''),
+    appleMusicUrl : new FormControl(''),
+    googlePlayUrl : new FormControl(''),
+    amazonMusicUrl : new FormControl(''),
+    youtubeUrl : new FormControl(''),
+    soundCloudUrl : new FormControl('')
+
   });
 
   ngOnInit(): void {
@@ -35,7 +43,6 @@ export class EditMusicComponent implements OnInit {
 
   editMusic(music:Music)
   {
-    console.warn('edit c', music);
     this.musicSvc.editMusicById(music);
   }
 
@@ -45,6 +52,13 @@ export class EditMusicComponent implements OnInit {
       id: this.music.id,
       name: this.music.name,
       album: this.music.album,
+      spotifyUrl : this.music.spotifyUrl,
+      deezerUrl : this.music.deezerUrl,
+      appleMusicUrl : this.music.appleMusicUrl,
+      googlePlayUrl : this.music.googlePlayUrl,
+      amazonMusicUrl : this.music.amazonMusicUrl,
+      youtubeUrl : this.music.youtubeUrl,
+      soundCloudUrl : this.music.soundCloudUrl
     });
   }
 

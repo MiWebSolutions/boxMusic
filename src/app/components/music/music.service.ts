@@ -47,7 +47,7 @@ export class MusicService {
           googlePlayUrl : music.googlePlayUrl,
           amazonMusicUrl : music.amazonMusicUrl,
           youtubeUrl : music.youtubeUrl,
-          soundCloud : music.soundCloudUrl
+          soundCloudUrl : music.soundCloudUrl
       };
 
       if(music.id)
