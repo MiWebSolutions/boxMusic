@@ -27,6 +27,8 @@ import { ModalComponent } from './shared/components/modal/modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { DeleteAlertComponent } from './shared/components/delete-alert/delete-alert.component';
+import { MusicIconsComponent } from './shared/components/music-icons/music-icons.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,10 @@ import { RegisterComponent } from './components/auth/register/register.component
     CreateMusicComponent,
     EditMusicComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    DeleteAlertComponent,
+    DeleteAlertComponent,
+    MusicIconsComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +63,9 @@ import { RegisterComponent } from './components/auth/register/register.component
   entryComponents: [
     ModalComponent
   ],
-  providers: [],
+  providers: [
+    {provide: Storage, useValue:'gs://boxmusicproyect.appspot.com'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

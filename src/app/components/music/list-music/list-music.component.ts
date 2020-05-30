@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore/firestore';
 import { MusicService } from '../music.service';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, ModalDismissReasons, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import { CreateMusicComponent } from '../create-music/create-music.component';
-import { Music } from '../../../shared/models/music';
+import { Music } from '../../../shared/models/music.interface';
 import { ModalComponent } from '../../../shared/components/modal/modal.component';
+import { DeleteAlertComponent } from '../../../shared/components/delete-alert/delete-alert.component';
 
 @Component({
   selector: 'app-list-music',
@@ -14,7 +15,7 @@ import { ModalComponent } from '../../../shared/components/modal/modal.component
 export class ListMusicComponent implements OnInit {
 
   musics;
-
+  
   constructor(private musicSvc:MusicService,
               private modalService:NgbModal) { }
 
@@ -22,9 +23,9 @@ export class ListMusicComponent implements OnInit {
     this.getAllMusic();
   }
 
-  getAllMusic()
+  async getAllMusic()
   {
-    return this.musicSvc.getAllMusic().subscribe(res => {
+    return await this.musicSvc.getAllMusic().subscribe(res => {
       this.musics = res;
     });
   }
@@ -41,6 +42,12 @@ export class ListMusicComponent implements OnInit {
 
   openModal(music?:Music) {
     const modalRef = this.modalService.open(ModalComponent);
+    modalRef.componentInstance.music = music;
+  }
+
+  deleteAlert(music:Music)
+  {
+    const modalRef = this.modalService.open(DeleteAlertComponent);
     modalRef.componentInstance.music = music;
   }
 }

@@ -1,4 +1,4 @@
-<div *ngIf="music===null; else showEditForm">
+<div *ngIf="music===null || music===undefined; else showEditForm">
     <app-create-music></app-create-music>
 </div>
 
