@@ -29,6 +29,7 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { DeleteAlertComponent } from './shared/components/delete-alert/delete-alert.component';
 import { MusicIconsComponent } from './shared/components/music-icons/music-icons.component';
+import { NewsletterComponent } from './components/home/newsletter/newsletter.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { MusicIconsComponent } from './shared/components/music-icons/music-icons
     RegisterComponent,
     DeleteAlertComponent,
     DeleteAlertComponent,
-    MusicIconsComponent
+    MusicIconsComponent,
+    NewsletterComponent
   ],
   imports: [
     BrowserModule,
