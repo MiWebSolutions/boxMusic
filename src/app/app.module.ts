@@ -30,6 +30,8 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { DeleteAlertComponent } from './shared/components/delete-alert/delete-alert.component';
 import { MusicIconsComponent } from './shared/components/music-icons/music-icons.component';
 import { NewsletterComponent } from './components/home/newsletter/newsletter.component';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { LoaderComponent } from './shared/components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,8 @@ import { NewsletterComponent } from './components/home/newsletter/newsletter.com
     DeleteAlertComponent,
     DeleteAlertComponent,
     MusicIconsComponent,
-    NewsletterComponent
+    NewsletterComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,8 @@ import { NewsletterComponent } from './components/home/newsletter/newsletter.com
     AngularFirestoreModule,
     AngularFireStorageModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxSkeletonLoaderModule
   ],
   entryComponents: [
     ModalComponent
